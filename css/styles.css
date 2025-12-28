@@ -11,7 +11,7 @@
 body {
   height: 100vh;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
   font-family: 'Poppins', sans-serif;
   color: #f5f5f5;
   background: radial-gradient(circle at top, #0b1d2a, #02070d);
@@ -177,9 +177,7 @@ html {
   font-size: 1.25rem;
   line-height: 1.7;
   font-family: 'Playfair Display', serif;
-  opacity: 0;
-  animation: textFadeIn 1.6s ease forwards;
-  animation-delay: 6.8s;
+  opacity: 1;
 }
 
 /* =========================
@@ -228,89 +226,126 @@ html {
 }
 
 /* =========================
-   ABOUT ME SCENE
+   ABOUT ME PAGE
 ========================= */
 
 #about-scene {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  opacity: 0;
-  transition: opacity 2.8s ease;
+  position: relative;
+  min-height: 100vh;
+  opacity: 1;
 }
 
-/* Your image */
+/* Background */
 .about-bg {
-  position: absolute;
+  position: fixed;
   inset: 0;
   background-image: url("../images/about-bg.jpg");
   background-size: cover;
   background-position: center;
+  z-index: -2;
 }
 
-/* Warm magical light */
 .about-overlay {
-  position: absolute;
+  position: fixed;
   inset: 0;
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(255, 215, 160, 0.35),
-      rgba(15, 10, 5, 0.7)
-    );
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 215, 160, 0.35),
+    rgba(10, 8, 6, 0.75)
+  );
+  z-index: -1;
 }
 
-/* Content */
-.about-content {
-  position: relative;
-  max-width: 720px;
-  padding: 48px;
-  text-align: center;
+/* Wrapper */
+.about-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 64px 160px;
   color: #fff;
 }
 
-.about-content.animate {
-  opacity: 1;
-  transform: translateY(0);
+/* Poetic line */
+.about-poetic {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 100px;
+  opacity: 0.85;
 }
 
-.about-content h1 {
-  font-size: 3rem;
+.about-poetic span {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.95rem;
+  opacity: 0.7;
+}
+
+.about-closure {
+  margin-top: 120px;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.0rem;
+  text-align: center;
+  opacity: 0.85;
+}
+
+.about-closure span {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.95rem;
+  opacity: 0.7;
+}
+
+/* Hero row */
+.about-hero {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 80px;
+  align-items: center;
+  margin-bottom: 120px;
+}
+
+/* Image */
+.about-left img {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 28px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+}
+
+/* Intro text */
+.about-right h1 {
+  font-size: 3.2rem;
   font-weight: 500;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
-.about-content p {
-  font-size: 1.3rem;
-  line-height: 1.7;
-  opacity: 0.9;
+.about-intro {
+  font-size: 1.35rem;
+  line-height: 1.75;
+  opacity: 0.95;
 }
 
-/* =====================================================
-   SCROLL BEHAVIOR FOR ABOUT ME
-===================================================== */
-
-.scroll-scene {
-  position: relative;
-  height: 120vh; /* gives room to scroll */
+/* Scroll content */
+.about-scroll p {
+  max-width: 760px;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 28px;
+  opacity: 0.88;
 }
 
-/* Content starts lower */
-.about-content {
-  transform: translateY(80px);
-  opacity: 0;
-  transition: transform 1.4s ease, opacity 1.4s ease;
-}
+.lyrics-disclaimer {
+  position: fixed;
+  bottom: 16px;
+  right: 20px;
+  max-width: 280px;
 
-/* When active (on scroll) */
-.about-content.visible {
-  transform: translateY(0);
-  opacity: 1;
+  font-size: 0.7rem;
+  line-height: 1.4;
+  opacity: 0.55;
+
+  color: #fff;
+  pointer-events: none;
 }
 
 /* =====================================================

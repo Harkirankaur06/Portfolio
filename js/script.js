@@ -1,29 +1,40 @@
 window.addEventListener("load", () => {
 
-  // Mist rises
+  const storybook = document.getElementById("storybook-scene");
+  const mist = document.getElementById("mist-scene");
+  const about = document.getElementById("about-scene");
+
+  // SAFETY: start clean
+  mist.classList.remove("active");
+  about.classList.remove("active");
+
+  // 1️⃣ Storybook stays visible initially
+  storybook.classList.add("active");
+
+  // 2️⃣ Mist enters (after book + text)
   setTimeout(() => {
-    document.getElementById("mist-scene").classList.add("active");
+    mist.classList.add("active");
   }, 8200);
 
-  // About Me appears behind mist
+  // 3️⃣ Hide storybook behind mist
   setTimeout(() => {
-    const about = document.getElementById("about-scene");
+    storybook.classList.remove("active");
+  }, 9500);
+
+  // 4️⃣ Show About page
+  setTimeout(() => {
     about.classList.add("active");
-    about.style.opacity = "1";
-  }, 9800);
+  }, 11000);
 
-  // About text fades/moves in
-  setTimeout(() => {
-    const aboutContent = document.querySelector(".about-content");
-    if (aboutContent) {
-      aboutContent.classList.add("animate");
-    }
-  }, 10800);
-
-  // Mist clears upward
+  // 5️⃣ Clear mist upward
   setTimeout(() => {
     document.querySelectorAll(".mist")
       .forEach(m => m.classList.add("clear"));
   }, 12500);
+
+  // 6️⃣ Enable scrolling ONLY now
+  setTimeout(() => {
+    document.body.style.overflowY = "auto";
+  }, 13000);
 
 });
