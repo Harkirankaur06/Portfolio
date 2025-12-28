@@ -2,69 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HARKIRAN KAUR - Portfolio</title>
-  <link rel="stylesheet" href="css/index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>The World of Harkiran</title>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <div class="cursor"></div>
-  <header>
-    <div class="container">
-      <h1>Harkiran Kaur</h1>
-      <p>Computer Science Engineer | Developer | MIET | Learner</p>
+
+  <!-- SCENE 1: STORYBOOK -->
+  <section id="storybook-scene" class="scene active">
+    <div class="storybook-container">
+      <div class="book">
+        <!-- LEFT SIDE (STATIC) -->
+        <div class="spine"></div>
+        <!-- RIGHT SIDE (PAGES) -->
+        <div class="pages">
+          <div class="page cover">
+            <h1 class="book-title">Let’s begin.</h1>
+          </div>
+          <div class="page page-2"></div>
+          <div class="page page-3"></div>
+          <div class="page page-text">
+            <p class="story-text">
+              This is the start of something new.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+  <section id="mist-scene" class="scene">
+    <div class="mist mist-back"></div>
+    <div class="mist mist-mid"></div>
+    <div class="mist mist-front"></div>
+  </section>
 
-<section id="about" class="hero">
-  <div class="left-side flower-frame">
-  <img src="images/profile.jpg" alt="Profile Picture" />
-  </div>
-  <div class="right-side flower-frame">
-  <div class="about-content">
-      <h2>About Me</h2>
+  <section id="about-scene" class="scene">
+    <div class="about-bg"></div>
+    <div class="about-overlay"></div>
+
+    <div class="about-content">
+      <h1>Hi, I’m Harkiran</h1>
       <p>
-        I'm a Computer Science engineering student at Amity University, Noida, also pursuing an Honors specialization in Cloud Computing. I'm passionate about coding and love bringing ideas to life through diverse projects — from mobile apps to full-fledged websites.
-      </p>
-      <p>
-        As a member of IET, I actively participate in hackathons, tech competitions, and side ventures that challenge my creativity and technical skills. I enjoy not just solving problems but designing intuitive, user-friendly solutions.
-      </p>
-      <p>
-        With a strong sense of leadership and a knack for teamwork, I thrive in collaborative environments where innovation meets execution.
+        I build thoughtful, visually rich digital experiences
+        where technology meets storytelling.
       </p>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="skill-section">
-  <h2 class="skills-title">My Skills</h2>
-  <div class="skills">
-    <div class="card"><span>HTML<br><small>Self-taught</small></span></div>
-    <div class="card"><span>CSS<br><small>Self-taught</small></span></div>
-    <div class="card"><span>JavaScript<br><small>Self-taught</small></span></div>
-    <div class="card"><span>Python<br><small>Academic Coursework</small></span></div>
-    <div class="card"><span>C<br><small>Academic Coursework</small></span></div>
-    <div class="card"><span>C++<br><small>Academic Coursework</small></span></div>
-    <div class="card"><span>Java<br><small>Academic Coursework</small></span></div>
-    <div class="card"><span>AWS<br><small>Academic Coursework</small></span></div>
-    <div class="card"><span>Git & Github<br><small><a href="assets/git_cert.pdf" target="_blank">Certificate</a></small></span></div>
-    <div class="card"><span>SQL<br><small>Academic Coursework</small></span></div>
-    <div class="card"><span>Cloud<br><small>Academic Coursework</small></span></div>
-  </div>
-</section>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Harkiran Kaur</p>
-    </div>
-  </footer>
-  <script src="js/main.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
