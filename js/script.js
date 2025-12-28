@@ -94,5 +94,36 @@ window.addEventListener("load", () => {
       skillsSection.style.alignItems = "center";
     }
   });
+  /* =========================
+    HIDE NON-INTRO SECTIONS
+  ========================= */
+
+  const deferredSections = [
+    "education-section",
+    "process-section",
+    "skills-section",
+    "contact-section",
+    "navigation-section"
+  ];
+
+  deferredSections.forEach(id => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.style.visibility = "hidden";
+    }
+  });
+
+  /* =========================
+    REVEAL MAIN CONTENT
+  ========================= */
+
+  setTimeout(() => {
+    deferredSections.forEach(id => {
+      const section = document.getElementById(id);
+      if (section) {
+        section.style.visibility = "visible";
+      }
+    });
+  }, 12000);
 
 });
