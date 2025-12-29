@@ -1,0 +1,392 @@
+/* =====================================================
+   RESET & LOCK SCROLL
+===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #f8f9fb;
+
+  /* Clean, cinematic background */
+  background:
+    radial-gradient(circle at 15% 20%, rgba(120,180,255,0.35), transparent 45%),
+    radial-gradient(circle at 85% 30%, rgba(255,160,210,0.25), transparent 50%),
+    linear-gradient(180deg, #050b14, #02060c);
+}
+
+/* =====================================================
+   HEADER — TITLE CARD (FIXED & CLEAN)
+===================================================== */
+
+header {
+  height: 22vh;
+  padding: 60px 70px 0;
+}
+
+header h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.4rem, 4.5vw, 3.2rem);
+  margin: 0 0 8px;
+  letter-spacing: 0.5px;
+}
+
+header p {
+  font-family: 'Mali', cursive;
+  font-size: 1rem;
+  opacity: 0.75;
+}
+
+/* =====================================================
+   REALM STRIP — MAIN STAGE
+===================================================== */
+
+.projects-scroll {
+  height: 78vh;
+  display: flex;
+  align-items: center;
+  gap: 56px;
+
+  padding: 0 70px 40px;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Clean scrollbar */
+.projects-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.projects-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #8fd3ff, #c9a7ff);
+  border-radius: 10px;
+}
+
+/* =====================================================
+   REALM CARD — STORY PANELS
+===================================================== */
+
+.realm {
+  flex: 0 0 auto;
+  width: 340px;
+  height: 420px;
+  padding: 30px;
+
+  scroll-snap-align: center;
+  border-radius: 26px;
+
+  /* Less glass, more story */
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.18),
+      rgba(255,255,255,0.04)
+    );
+
+  backdrop-filter: blur(14px);
+  box-shadow:
+    0 40px 90px rgba(0,0,0,0.55),
+    inset 0 0 0 1px rgba(255,255,255,0.12);
+
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* Lift only slightly — no jumpiness */
+@media (hover: hover) {
+  .realm:hover {
+    transform: translateY(-10px);
+    box-shadow:
+      0 60px 120px rgba(0,0,0,0.7),
+      0 0 40px rgba(150,200,255,0.25);
+  }
+}
+
+/* =====================================================
+   REALM COLOR ACCENTS (SUBTLE)
+===================================================== */
+
+.realm:nth-child(1) { --accent: #7fdcff; }
+.realm:nth-child(2) { --accent: #bfa8ff; }
+.realm:nth-child(3) { --accent: #55e6c1; }
+.realm:nth-child(4) { --accent: #ff9ad5; }
+.realm:nth-child(5) { --accent: #ffd36f; }
+.realm:nth-child(6) { --accent: #ff7a7a; }
+.realm:nth-child(7) { --accent: #7affb3; }
+.realm:nth-child(8) { --accent: #aab0ff; }
+.realm:nth-child(9) { --accent: #6fffe9; }
+.realm:nth-child(10){ --accent: #ffb86b; }
+.realm:nth-child(11){ --accent: #86fff5; }
+
+/* soft edge glow */
+.realm::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(180deg, var(--accent), transparent 60%);
+  opacity: 0.25;
+  filter: blur(18px);
+  z-index: -1;
+}
+
+/* =====================================================
+   TEXT — CLEAN & READABLE
+===================================================== */
+
+.realm h2 {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+}
+
+.realm p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  opacity: 0.88;
+  margin-bottom: 12px;
+}
+
+/* =====================================================
+   STATUS (BOTTOM, QUIET)
+===================================================== */
+
+.realm ul {
+  position: absolute;
+  bottom: 26px;
+  left: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* =====================================================
+   LINK ICONS — CLEAR BUT NOT LOUD
+===================================================== */
+
+.realm-links {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  display: flex;
+  gap: 14px;
+}
+
+.realm-links img {
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 0 8px var(--accent));
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.realm-links a:hover img {
+  transform: scale(1.2);
+}
+
+/* =====================================================
+   BACK TO HOME — STORY BUTTON
+===================================================== */
+
+footer {
+  position: fixed;
+  left: 24px;
+  bottom: 20px;
+  z-index: 10;
+}
+
+footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 18px;
+  border-radius: 999px;
+
+  font-family: 'Mali', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.2px;
+
+  color: #f7f7fb;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.18),
+      rgba(255,255,255,0.06)
+    );
+
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.45),
+    inset 0 0 0 1px rgba(255,255,255,0.15);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* hover lift */
+@media (hover: hover) {
+  footer a:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 18px 40px rgba(0,0,0,0.6),
+      inset 0 0 0 1px rgba(255,255,255,0.25);
+  }
+}
+
+/* subtle arrow cue */
+footer a::before {
+  content: "←";
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* mobile: larger tap target */
+@media (max-width: 768px) {
+  footer {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 16px;
+  }
+
+  footer a {
+    padding: 12px 22px;
+    font-size: 1rem;
+  }
+}
+
+/* =====================================================
+   MOBILE FIXES
+===================================================== */
+
+@media (max-width: 768px) {
+  header {
+    height: auto;
+    padding: 40px 24px 20px;
+  }
+
+  .projects-scroll {
+    height: calc(100vh - 140px);
+    padding: 0 24px 40px;
+    gap: 28px;
+  }
+
+  .realm {
+    width: 280px;
+    height: 480px;
+  }
+}
+
+/* =====================================================
+   CURSOR SPARKLE LAYER
+===================================================== */
+
+#sparkle-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+
+  background: radial-gradient(circle, #ffffff, transparent 70%);
+  opacity: 0.9;
+
+  animation: sparkleFade 700ms ease-out forwards;
+}
+
+@keyframes sparkleFade {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.2) translate(-6px, -12px);
+    opacity: 0;
+  }
+}
+
+/* Disable sparkles on touch devices */
+@media (hover: none) {
+  #sparkle-layer {
+    display: none;
+  }
+}
+
+/* sealed shake */
+.sealed {
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  50% { transform: translateX(6px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+
+/* video overlay */
+.video-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5,10,20,0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.video-frame {
+  position: relative;
+  width: min(90vw, 800px);
+  aspect-ratio: 16 / 9;
+}
+
+.video-frame iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+}
+
+.video-frame .close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* disabled links */
+.disabled-link img {
+  opacity: 0.25;
+  filter: grayscale(1);
+  cursor: not-allowed;
+}
+
+.disabled-link {
+  pointer-events: none;
+}
