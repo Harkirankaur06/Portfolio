@@ -42,6 +42,23 @@ window.addEventListener("load", () => {
   }, 12000);
 
   /* =========================
+     POLAROID DECK
+  ========================= */
+  const polaroidDeck = document.querySelector(".about-polaroids");
+
+  if (polaroidDeck) {
+    polaroidDeck.addEventListener("click", () => {
+      const photos = polaroidDeck.querySelectorAll("img");
+
+      if (photos.length <= 1) return;
+
+      // Move the top photo to the bottom
+      const topPhoto = photos[photos.length - 1];
+      polaroidDeck.insertBefore(topPhoto, photos[0]);
+    });
+  }
+
+  /* =========================
      SKILL CARD DECK (CORRECT)
   ========================= */
 
@@ -125,5 +142,38 @@ window.addEventListener("load", () => {
       }
     });
   }, 12000);
+
+  /* =========================
+      magic trail in process section
+  ========================= */
+  const processSection = document.getElementById("process-section");
+
+  processSection.addEventListener("mousemove", (e) => {
+    const sparkle = document.createElement("span");
+
+    sparkle.textContent = "✦";
+    sparkle.style.position = "fixed";
+    sparkle.style.left = e.clientX + "px";
+    sparkle.style.top = e.clientY + "px";
+
+    sparkle.style.fontSize = "14px";
+    sparkle.style.color = "rgba(255, 215, 160, 0.95)";
+    sparkle.style.pointerEvents = "none";
+    sparkle.style.zIndex = "999999";
+
+    sparkle.style.transform = "translate(-50%, -50%)";
+    sparkle.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+
+    document.body.appendChild(sparkle);
+
+    requestAnimationFrame(() => {
+      sparkle.style.opacity = "0";
+      sparkle.style.transform = "translate(-50%, -80%) scale(0.6)";
+    });
+
+    setTimeout(() => sparkle.remove(), 600);
+  });
+
+
 
 });

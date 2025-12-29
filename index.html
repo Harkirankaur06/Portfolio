@@ -38,59 +38,76 @@
     <div class="mist mist-mid"></div>
     <div class="mist mist-front"></div>
   </section>
-
-  <section id="about-scene" class="scene active">
+  
+  <section id="about-scene" class="scene">
     <div class="about-bg"></div>
     <div class="about-overlay"></div>
     <div class="about-wrapper">
-      <!-- Poetic line -->
-      <p class="about-poetic">
-        “Introducing Me” 
-        <span>— Nick Jonas</span>
-      </p>
-      <!-- Main intro row -->
-      <div class="about-hero">
-        <div class="about-left">
-          <img src="images/profile.jpg" alt="Harkiran Kaur">
+      <!-- ABOUT : PANEL 1 -->
+      <section class="about-panel about-intro-panel">
+        <p class="about-poetic">
+          “Introducing Me”
+          <span>— Nick Jonas</span>
+        </p>
+        <div class="about-hero">
+          <div class="about-left">
+            <img src="images/profile.jpg" alt="Harkiran Kaur">
+          </div>
+          <div class="about-right">
+            <h1>Hey, I’m Harkiran</h1>
+            <p class="about-intro">
+              I build thoughtful, visually intentional digital experiences
+              where engineering meets creativity.
+            </p>
+          </div>
         </div>
-        <div class="about-right">
-          <h1>Hey, I’m Harkiran</h1>
-          <p class="about-intro">
-            I’m a software engineering student who enjoys building clean,
-            visually polished digital products that feel intentional and
-            human-centered.
-          </p>
+      </section>
+      <!-- ABOUT : PANEL 2 -->
+      <section class="about-panel about-story-panel">
+        <div class="about-story">
+          <div class="about-text">
+            <p>
+            I’m a third-year Computer Science student pursuing a B.Tech with Honors in
+            Cloud Computing at Amity University, Noida. I enjoy working on projects that
+            sit at the intersection of engineering and experience — where functionality
+            is strong, but the interface still feels thoughtful and human.
+            </p>
+            <p>
+            Over time, I’ve explored web, mobile, backend, AI, and interactive systems,
+            building everything from AI-powered health assistants and sustainability
+            tools to gamified awareness platforms and visually rich digital experiences.
+            I’m especially drawn to projects where technology is used to explain,
+            simplify, or encourage meaningful engagement.
+            </p>
+            <p>
+            Beyond development, I’ve been actively involved in leadership and
+            co-curricular spaces. As a Class Representative, I work closely with peers
+            and faculty, and I regularly participate in hackathons, technical clubs, and
+            cultural initiatives — often representing my university at national-level
+            events. These experiences have shaped how I communicate, collaborate, and
+            take ownership of what I build.
+            </p>
+            <p>
+            Right now, I’m focused on creating interactive, well-crafted products —
+            experiences that feel intentional, intuitive, and slightly magical. I care
+            about details, flow, and polish, and I’m constantly learning how to make
+            technology not just work, but *feel right*.
+            </p>
+            <p class="about-closure">
+            “This is real, this is me.”
+            <span>— Demi Lovato</span>
+            </p>
+          </div>
+          <div class="about-polaroids">
+            <img src="images/Polaroid (1).jpg" style="--r:-6deg; --x:-14px; --y:8px;">
+            <img src="images/Polaroid (2).jpg" style="--r:4deg;  --x:12px;  --y:-6px;">
+            <img src="images/Polaroid (3).jpg" style="--r:-2deg; --x:0px;   --y:0px;">
+            <img src="images/Polaroid (4).jpg" style="--r:5deg;  --x:8px;   --y:10px;">
+            <img src="images/Polaroid (5).jpg" style="--r:-4deg; --x:-8px;  --y:-10px;">
+            <img src="images/Polaroid (6).jpg" style="--r:2deg;  --x:6px;   --y:6px;">
+          </div>
         </div>
-      </div>
-      <!-- Scroll content -->
-      <div class="about-scroll">
-        <p>
-          I’m currently a third-year B.Tech Computer Science student at
-          Amity University, Noida. I love working on real-world tech
-          solutions — especially where creativity meets solid engineering.
-        </p>
-        <p>
-          Over time, I’ve built projects across web, mobile, AI, and game
-          development — from AI-powered health assistants and sustainability
-          tools to gamified awareness apps and interactive experiences.
-        </p>
-        <p>
-          Beyond development, I’m deeply involved in leadership and
-          co-curricular activities. I serve as a Class Representative and
-          actively participate in hackathons, technical clubs, and cultural
-          events, often representing my university at national-level
-          platforms.
-        </p>
-        <p>
-          Right now, I’m especially interested in building interactive,
-          visually rich experiences — the kind that make people want to
-          explore, understand, and come back.
-        </p>
-        <p class="about-closure">
-          “This is real, this is me.”
-          <span>— Demi Lovato</span>
-        </p>
-      </div>
+      </section>
     </div>
     <div class="lyrics-disclaimer">
       Lyrics referenced belong to their respective creators.
@@ -99,44 +116,70 @@
   </section>
 
   <section id="education-section">
-    <h2 class="section-title">Background</h2>
-    <div class="education-content">
-      <p>
-        B.Tech in Computer Science (Hons. Cloud Computing)<br>
-        Amity University, Noida
+    <!-- EDUCATION : PANEL 1 -->
+    <div class="education-panel education-main">
+      <div class="education-layout">
+        <div class="education-text">
+          <h2 class="section-title">Education</h2>
+          <p class="education-degree">
+            Pursuing B.Tech in Computer Science<br>
+            <span>(Hons. Cloud Computing)</span><br>
+            Amity University, Noida
+          </p>
+        </div>
+        <div class="education-image">
+          <img src="images/AMITY.jpg" alt="Amity University Noida">
+        </div>
+      </div>
+    </div>
+    <!-- EDUCATION : PANEL 2 -->
+    <div class="education-panel education-languages">
+      <h2 class="section-title">Languages I Speak</h2>
+      <div class="language-cloud">
+        <span class="Language english" data-level="C1 Proficiency">
+          “Somewhere between logic and imagination.”
+        </span>
+        <span class="Language hindi" data-level="Native Proficiency">
+          “हर चीज़ को समझने का एक समय होता है।”
+        </span>
+        <span class="Language punjabi" data-level="Native Proficiency">
+          “ਸਾਦਗੀ ਵਿੱਚ ਹੀ ਸੁੰਦਰਤਾ ਹੈ।”
+        </span>
+        <span class="Language german" data-level="Elementary Level">
+          “Ich lerne Schritt für Schritt.”
+        </span>
+        <span class="Language japanese" data-level="Elementary Level">
+          “少しずつ、前へ。”
+        </span>
+      </div>
+      <p class="section-lyric">
+        “Life’s what you make it.”<br>
+        — Miley Cyrus
       </p>
     </div>
-    <div class="education-content2">
-      <p>
-        Languages I work with:<br><br>
-        English  - C1 Profeciency,<br> Hindi  - Native Profeciency,<br> Punjabi  - Native Profeciency,<br> German  - Elementary level Profeciency,<br> Japanese  - Elementary level Profeciency
-      </p>
-    </div>
-    <p class="section-lyric">
-      “Life’s what you make it.”<br>
-      — Miley Cyrus
-    </p>
   </section>
+
 
   <section id="process-section">
     <h2 class="section-title">How I Work</h2>
-    <div class="process-list">
-      <p>
-        I begin by understanding the problem — the user,
-        the context, and what actually needs to be solved.
-      </p>
-      <p>
-        I design flows and interfaces before writing code,
-        focusing on clarity and usability.
-      </p>
-      <p>
-        I build incrementally, test often, and refine
-        through iteration and feedback.
-      </p>
-      <p>
-        I’m constantly learning — improving performance,
-        polishing UX, and exploring better approaches.
-      </p>
+    <div id="magic-trail"></div>
+    <div class="process-steps">
+      <div class="process-step">
+        <span class="step-number">01</span>
+        <p>Understand the problem, the user, and the context.</p>
+      </div>
+      <div class="process-step">
+        <span class="step-number">02</span>
+        <p>Design flows and interfaces before writing code.</p>
+      </div>
+      <div class="process-step">
+        <span class="step-number">03</span>
+        <p>Build incrementally, test often, and refine.</p>
+      </div>
+      <div class="process-step">
+        <span class="step-number">04</span>
+        <p>Learn continuously and improve through feedback.</p>
+      </div>
     </div>
     <p class="section-lyric">
       “Nobody’s perfect.”<br>
@@ -155,8 +198,8 @@
           <h3>Frontend Development</h3>
           <ul>
             HTML, CSS, JavaScript, React,
-            responsive UI, animations,
-            accessibility basics
+            responsive layouts, animations,
+            accessibility fundamentals
           </ul>
         </div>
         <div class="skill-card">
@@ -172,7 +215,7 @@
           <ul>
             Java, Python, Node.js,
             REST APIs, authentication,
-            basic API integration
+            backend logic & data handling
           </ul>
         </div>
         <div class="skill-card">
@@ -180,7 +223,7 @@
           <ul>
             Machine learning fundamentals,
             AI-powered applications,
-            data-driven features
+            model integration & inference
           </ul>
         </div>
         <div class="skill-card">
@@ -189,6 +232,22 @@
             SQL, relational databases,
             basic schema design,
             data modeling
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Cloud & Backend Services</h3>
+          <ul>
+            Supabase, cloud-hosted databases,
+            authentication workflows,
+            storage & backend configuration
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>APIs & Integrations</h3>
+          <ul>
+            RESTful APIs, third-party services,
+            data fetching & parsing,
+            API-driven features
           </ul>
         </div>
         <div class="skill-card">
@@ -221,6 +280,30 @@
             Supabase,
             authentication flows,
             cloud-hosted databases
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Interactive & Gamified Systems</h3>
+          <ul>
+            Gamification mechanics,
+            progress systems,
+            interactive user engagement
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Maps & Visual Data</h3>
+          <ul>
+            Map-based interfaces,
+            geospatial data concepts,
+            interactive visualizations
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Testing & Debugging</h3>
+          <ul>
+            Debugging workflows,
+            performance monitoring,
+            iterative improvement
           </ul>
         </div>
       </div>
