@@ -1386,7 +1386,7 @@ section::before {
   top: 50%;
 
   transform: translateY(-50%);
-  font-size: 0.8rem;
+  font-size: 1rem;
 
   opacity: 0;
   transition: opacity 0.35s ease;
@@ -1497,7 +1497,7 @@ section::before {
   left: 0;
   top: 6px;
 
-  font-size: 0.9rem;
+  font-size: 2rem;
   opacity: 0;
 
   transform: scale(0.6);
@@ -1513,7 +1513,7 @@ section::before {
 
 .step-number {
   font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
+  font-size: 1.6rem;
 
   opacity: 0.6;
   margin-right: 12px;
