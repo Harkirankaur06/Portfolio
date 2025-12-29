@@ -1,0 +1,260 @@
+/* ======================
+   RESET
+====================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ======================
+   SCENE
+====================== */
+
+.scene {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.45),
+      rgba(0,0,0,0.55)
+    ),
+    url('../images/blog-bg.png') center / cover no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ======================
+   STAGE
+====================== */
+
+.lantern-stage {
+  position: relative;
+  width: 420px;
+  height: 600px;
+}
+
+/* ======================
+   LANTERN MOTION
+====================== */
+
+.lantern {
+  position: absolute;
+  inset: 0;
+
+  transform: translateX(-55vw);
+  transition: transform 3.5s ease-out;
+  pointer-events: none;
+}
+
+.lantern.active {
+  transform: translateX(0);
+}
+
+.lantern.exit-right {
+  transform: translateX(55vw);
+}
+
+.lantern.exit-left {
+  transform: translateX(-55vw);
+}
+
+.lantern:not(.active):not(.exit-left):not(.exit-right) {
+  transform: translateX(-120vw);
+}
+
+/* ======================
+   LANTERN SHELL
+====================== */
+
+.lantern-shell {
+  height: 100%;
+  border-radius: 200px / 52px;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      #fff4d2 0%,
+      #ffd88f 45%,
+      #f1a53a 85%
+    );
+
+  box-shadow:
+    0 0 48px rgba(255,190,120,0.5),
+    0 38px 120px rgba(0,0,0,0.75);
+
+  position: relative;
+}
+
+/* ======================
+   CONTENT LAYOUT
+====================== */
+
+.lantern-content {
+  height: 100%;
+  padding: 52px 38px;
+  color: #3a240c;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* ======================
+   FIXED HEADER
+====================== */
+
+.lantern-header {
+  flex-shrink: 0;
+}
+
+.lantern-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 18px;
+}
+
+.lantern-content h2 {
+  font-family: 'Mali', cursive;
+  font-size: 1.55rem;
+  margin-bottom: 6px;
+}
+
+.date {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin-bottom: 18px;
+}
+
+/* ======================
+   SCROLLABLE STORY BODY
+====================== */
+
+.lantern-body {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 10px;
+}
+
+.lantern-body::-webkit-scrollbar {
+  width: 0;
+}
+
+.lantern-body p {
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+/* ======================
+   SCROLL FADE HINT
+====================== */
+
+.lantern-shell::after {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  left: 38px;
+  right: 38px;
+  height: 36px;
+  pointer-events: none;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(241,165,58,0),
+    rgba(241,165,58,1)
+  );
+}
+
+/* ======================
+   GENTLE FLOAT
+====================== */
+
+@keyframes gentleFloat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+.lantern.active .lantern-shell {
+  animation: gentleFloat 18s ease-in-out infinite;
+}
+
+/* ======================
+   NAVIGATION
+====================== */
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: none;
+  border: none;
+  font-size: 2.1rem;
+  color: rgba(255,255,255,0.75);
+  cursor: pointer;
+  padding: 18px;
+
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.nav:hover {
+  opacity: 1;
+}
+
+.nav.left { left: 20px; }
+.nav.right { right: 20px; }
+
+/* ======================
+   MOBILE
+====================== */
+
+@media (max-width: 600px) {
+  .lantern-stage {
+    width: 320px;
+    height: 520px;
+  }
+
+  .lantern {
+    transform: translateX(-65vw);
+  }
+
+  .lantern.exit-right {
+    transform: translateX(65vw);
+  }
+
+}
+
+.nav.home {
+  top: 20px;
+  left: 20px;
+  transform: none;
+  font-size: 3rem;
+  text-decoration: none;
+}
+
+.lantern {
+  pointer-events: none;
+}
+
+.lantern-content,
+.lantern-body {
+  pointer-events: auto;
+}
+
+.lantern-body {
+  scroll-behavior: smooth;
+}
